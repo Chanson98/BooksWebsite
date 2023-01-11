@@ -20,6 +20,7 @@ const Cart = ({ cart, setCart }) => {
     cart.map((item) => (ans += item.amount * item.price));
     setPrice(ans);
   };
+
   const columns = [
     {title:'Book image',
     dataIndex:'img',
@@ -73,6 +74,7 @@ const Cart = ({ cart, setCart }) => {
       ),
     },
   ];
+  
   useEffect(() => {
     handlePrice();
   });
@@ -86,13 +88,13 @@ const Cart = ({ cart, setCart }) => {
         <span> ${price}</span>
       </div>
       <Button className="checkout" size="large" style={{ 
-    color: "white",
-    fontWeight:"bold",
-    backgroundColor: "skyblue"
-   }}
-   onClick={() => setModalOpen(true)}
-   >Checkout</Button>
-   <Modal
+        color: "white",
+        fontWeight:"bold",
+        backgroundColor: "skyblue"
+        }}
+        onClick={() => setModalOpen(true)}
+      >Checkout</Button>
+      <Modal
         title="Check out Confirmation"
         centered
         open={modalOpen}

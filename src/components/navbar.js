@@ -6,11 +6,11 @@ const NNavbar = ({ setShow, size }) => {
   return (
     <nav>
       <div className="nav_box">
-        <span className="my_shop" onClick={() => setShow(true)}>
+        <span className="my_shop" onClick={() => setShow("ShoppingList")}>
           <ReadOutlined style={{marginRight:10}}/>
           Book World
         </span>
-        <div className="cart" onClick={() => setShow(false)}>
+        <div className="cart" onClick={() => setShow("cart")}>
           <span>
             <i className="fas fa-cart-plus"></i>
           </span>

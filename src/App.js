@@ -7,7 +7,7 @@ import React, {useState} from 'react';
 import {message} from 'antd';
 
 function App() {
-  const [show,setShow] = useState(true);
+  const [show,setShow] = useState('ShoppingList');
   const [cart,setCart] = useState([]);
   const [messageApi, contextHolder] = message.useMessage();
   const success = () => {
@@ -32,15 +32,26 @@ function App() {
       success();
 
     };
+    
+  const contentView = () => {
+    switch (show) {
+        case 'ShoppingList':
+            console.log('ShoppingList')
+            return <ShoppingList handleClick={handleClick} />
+
+        case 'cart':
+            console.log('cart');
+            return <Cart cart={cart} setCart={setCart} />
+        default:
+          return <ShoppingList handleClick={handleClick} />
+    };
+};
+
   return (
    <React.Fragment>
     <NNavbar setShow={setShow} size={cart.length}/>
     {contextHolder}
-    {show ? (
-        <ShoppingList handleClick={handleClick} />
-      ) : (
-        <Cart cart={cart} setCart={setCart} />
-      )}
+    {contentView()}
    </React.Fragment>
   );
 }
