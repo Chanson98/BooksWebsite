@@ -1,10 +1,9 @@
 import React from "react";
 import "../styles/navbar.css";
-import { ReadOutlined } from '@ant-design/icons';
+import {ShoppingCartOutlined, ReadOutlined } from '@ant-design/icons';
 
 const Navbar = ({ setShow, size }) => {
   return (
-    <nav>
       <div className="nav_box">
         <span className="my_shop" onClick={() => setShow("ShoppingList")}>
           <ReadOutlined style={{marginRight:10}}/>
@@ -12,12 +11,11 @@ const Navbar = ({ setShow, size }) => {
         </span>
         <div className="cart" onClick={() => setShow("cart")}>
           <span>
-            <i className="fas fa-cart-plus"></i>
+          <ShoppingCartOutlined type="message" theme="outlined" />
           </span>
           <span>{size}</span>
         </div>
       </div>
-    </nav>
   );
 };
 
