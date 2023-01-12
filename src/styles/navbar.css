@@ -10,7 +10,8 @@
   }
   
   .nav_box {
-    width: 80%;
+    padding-left: 2%;
+    padding-right: 2%;
     margin: auto;
     display: flex;
     align-items: center;

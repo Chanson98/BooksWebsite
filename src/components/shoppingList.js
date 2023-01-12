@@ -1,15 +1,15 @@
 import React from "react";
 import list from "../data";
 import Cards from "./card";
-import "../styles/ShoppingList.css";
+import "../styles/shoppingList.css";
 
 const ShoppingList = ({ handleClick }) => {
   return (
-    <section>
+    <div className="section">
       {list.map((item) => (
-        <Cards key={item.id} item={item} handleClick={handleClick} />
+        <Cards key={item.key} item={item} handleClick={handleClick} />
       ))}
-    </section>
+    </div>
   );
 };
 
