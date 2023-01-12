@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/navbar.css";
 import { ReadOutlined } from '@ant-design/icons';
 
-const NNavbar = ({ setShow, size }) => {
+const Navbar = ({ setShow, size }) => {
   return (
     <nav>
       <div className="nav_box">
@@ -21,6 +21,6 @@ const NNavbar = ({ setShow, size }) => {
   );
 };
 
-export default NNavbar;
+export default Navbar;
 
 

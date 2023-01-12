@@ -1,6 +1,6 @@
 import 'antd/dist/reset.css';
 import './App.css';
-import NNavbar from './components/navbar';
+import Navbar from './components/navbar';
 import ShoppingList from './components/shoppingList';
 import Cart from './components/cart';
 import React, {useState} from 'react';
@@ -28,19 +28,15 @@ function App() {
         return;
       } 
       setCart([...cart, item]);
-      console.log(cart);
       success();
 
     };
-    
+
   const contentView = () => {
     switch (show) {
         case 'ShoppingList':
-            console.log('ShoppingList')
             return <ShoppingList handleClick={handleClick} />
-
         case 'cart':
-            console.log('cart');
             return <Cart cart={cart} setCart={setCart} />
         default:
           return <ShoppingList handleClick={handleClick} />
@@ -49,7 +45,7 @@ function App() {
 
   return (
    <React.Fragment>
-    <NNavbar setShow={setShow} size={cart.length}/>
+    <Navbar setShow={setShow} size={cart.length}/>
     {contextHolder}
     {contentView()}
    </React.Fragment>
