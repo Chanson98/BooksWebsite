@@ -2,8 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 # steps for running this project
-1. npm start
+1. npm install
 2. yarn add antd
+3. npm start
 
 
 
